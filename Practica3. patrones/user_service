@@ -1,0 +1,14 @@
+from user_repository import UserRepository
+from user import User
+
+class UserService:
+    def __init__(self, UserRepository):
+        self.user_repository = UserRepository
+
+    def get_user(self, user_id):
+        user = self.user_repository.get_user(user_id)
+        return User(user['name'], user['email'])
+
+
+
+
